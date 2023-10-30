@@ -1,41 +1,45 @@
+/* ... Other CSS rules ... */
+
 body {
-  padding: 0;
   margin: 0;
+  padding: 0;
   box-sizing: border-box;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
+  display: flex;
+  justify-content: center;
 }
 
 .container {
-  width: 100vw;
+  width: 100%;
+  max-width: 800px; /* Define a max-width for larger screens */
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
+  padding: 0 15px; /* Adjust the padding for smaller screens */
 }
+
 .form-area {
   display: flex;
   flex-direction: column;
   gap: 20px;
+  width: 100%; /* Ensure the form stretches to the width of the container */
+  padding: 15px; /* Adjust the padding for smaller screens */
 }
 
 textarea {
   resize: none;
-  width: 500px;
+  width: 100%;
+  max-width: 100%; /* Make the textarea responsive */
   height: 70px;
   outline: none;
   font-family: inherit;
   padding: 10px;
+  overflow: auto; /* Make the textarea scrollable if content overflows */
 }
 
-label {
-  display: block;
-  margin-bottom: 2px;
-}
-
+label,
 input {
-  width: 97%;
-  padding: 5px;
-  outline: none;
+  width: 100%;
 }
 
 button {
@@ -43,8 +47,8 @@ button {
   background-color: transparent;
   font-size: 16px;
   color: aqua;
-  border: none;
   border: 2px;
+  border: none; /* Remove duplicated 'border' property */
   cursor: pointer;
 }
 
@@ -56,8 +60,36 @@ button:hover {
 #redacted-content {
   border: 1px solid gray;
   border-radius: 3px;
-  width: 500px;
+  width: 100%; /* Make the redacted content responsive */
   padding: 10px;
   font-size: 12px;
-  /* display: none; */
+}
+
+@media screen and (max-width: 500px) {
+  .container {
+    padding: 0 15px;
+  }
+
+  .form-area {
+    padding: 15px;
+  }
+
+  .form-area > div {
+    width: 100%;
+  }
+
+  input {
+    box-sizing: border-box;
+  }
+
+  textarea {
+    width: 100%;
+    max-height: 200px; /* Limit the maximum height on smaller screens */
+    box-sizing: border-box;
+  }
+
+  #redacted-content {
+    width: 100%;
+    box-sizing: border-box;
+  }
 }
