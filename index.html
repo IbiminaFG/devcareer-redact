@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Redact App</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="app.js" defer></script>
+</head>
+
+<body>
+    <div class="container">
+        <h1>REDACT APP</h1>
+        <div class="form-area">
+            <div>
+                <textarea id="content" placeholder="Enter your content here"></textarea>
+            </div>
+            <div>
+                <label for="words-to-redact">Words to redact:</label>
+                <input type="text" name="words-to-redact" id="words-to-redact"
+                    placeholder="Words to redact (space-separated)">
+            </div>
+            <div>
+                <label for="replacement">Replacement:</label>
+                <input type="text" name="replacement" id="replacement"
+                    placeholder="Replacement character (optional) eg. *"><br>
+            </div>
+            <button id="redact-button">Redact Now</button>
+            <div id="redacted-content"></div>
+        </div>
+    </div>
+</body>
+
+</html>
